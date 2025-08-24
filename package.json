@@ -1,0 +1,44 @@
+{
+  "name": "@zaubermaerchen/fastify-inversify",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": "./dist/plugin.js",
+  "types": "./dist/plugin.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "node -e 'fs.rmSync(`dist`, {recursive:true, force:true})' &&tsc",
+    "test": "node --import tsx --no-warnings --test test/plugin.test.ts",
+    "lint": "eslint --fix 'src/**/*.{js,ts}'"
+  },
+  "keywords": [
+    "fastify",
+    "inversify",
+    "di",
+    "dependency-injection",
+    "plugin"
+  ],
+  "license": "MIT",
+  "description": "Fastify plugin for InversifyJS",
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.34.0",
+    "@tsconfig/node22": "^22.0.2",
+    "@types/node": "^24.3.0",
+    "eslint": "^9.34.0",
+    "tsx": "^4.20.4",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.40.0"
+  },
+  "dependencies": {
+    "fastify-plugin": "^5.0.1"
+  },
+  "peerDependencies": {
+    "fastify": ">=5.0.0",
+    "inversify": ">=7.0.0"
+  }
+}
