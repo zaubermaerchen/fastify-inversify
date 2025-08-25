@@ -1,20 +1,20 @@
-import fp from "fastify-plugin"
-import { FastifyPluginAsync } from 'fastify'
-import { Container } from "inversify"
+import fp from "fastify-plugin";
+import { FastifyPluginAsync } from 'fastify';
+import { Container } from "inversify";
 
 declare module "fastify" {
     interface FastifyInstance {
-        diContainer: Container
+        diContainer: Container;
     }
     interface FastifyRequest {
-        diScope: Container
+        diScope: Container;
     }
 }
 
 export interface InversifyPluginOptions {
-    container?: Container
-    disposeOnClose?: boolean
-    disposeOnResponse?: boolean
+    container?: Container;
+    disposeOnClose?: boolean;
+    disposeOnResponse?: boolean;
 }
 
 const plugin: FastifyPluginAsync<InversifyPluginOptions> = async (fastify, options) => {
